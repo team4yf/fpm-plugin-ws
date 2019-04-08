@@ -1,0 +1,26 @@
+{
+  "name": "fpm-plugin-ws",
+  "version": "0.0.1",
+  "description": "A Project Named [fpm-plugin-ws] Created by fpm-dev-cli",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/nodemon dev/dev.js",
+    "test": "./node_modules/.bin/mocha test/*.test.js"
+  },
+  "author": "yfsoftcom",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "lodash": "^4.17.4",
+    "ws": "^6.2.1"
+  },
+  "devDependencies": {
+    "fpmc-jssdk": "^1.0.7",
+    "mocha": "^6.1.1",
+    "nodemon": "^1.11.0",
+    "yf-fpm-server": "^2.6.1"
+  },
+  "engines": {
+    "node": ">=8.11.1"
+  }
+}
