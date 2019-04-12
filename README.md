@@ -1,9 +1,9 @@
-## FPM-PLUGIN-${ name }
-用于${ name }的插件
+## FPM-PLUGIN-WEBSOCKET
+用于创建websocket服务端的插件
 
 ### Install
 ```bash
-npm add fpm-plugin-${ name } --save
+npm add fpm-plugin-ws --save
 ```
 
 ### Useage

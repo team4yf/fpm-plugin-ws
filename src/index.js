@@ -23,6 +23,16 @@ module.exports = {
     const _wsServer = { ref: undefined, callbacks: {}, clients: {} };
 
     const bizModule = {
+      clients: async args => {
+        debug('[clients]: args %O', args);
+        try {
+          const { ref, clients } = _wsServer;
+          assert(!!ref, 'Websocket Server not running');
+          return _.keys(clients);
+        } catch (error) {
+          return Promise.reject({ message: error.message });
+        }
+      },
       send: async args => {
         debug('[broadcast]: args %O', args);
         const { id, payload } = args;
@@ -87,6 +97,7 @@ module.exports = {
 
         ws.on('close', () => {
           debug('on close %O, from %s', ws.id);
+          delete _wsServer.clients[ws.id];
           fpm.publish('#ws/close', ws.id);
         })
       } catch (error) {
