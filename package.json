@@ -1,6 +1,6 @@
 {
   "name": "fpm-plugin-ws",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Project Named [fpm-plugin-ws] Created by fpm-dev-cli",
   "main": "src/index.js",
   "scripts": {

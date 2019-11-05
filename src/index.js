@@ -100,6 +100,11 @@ module.exports = {
           delete _wsServer.clients[ws.id];
           fpm.publish('#ws/close', ws.id);
         })
+        ws.on('error', () => {
+          debug('on error %O, from %s', ws.id);
+          delete _wsServer.clients[ws.id];
+          fpm.publish('#ws/error', ws.id);
+        })
       } catch (error) {
         debug('Error %O', error)
       }
